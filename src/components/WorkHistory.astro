@@ -1,0 +1,62 @@
+---
+import Timeline from "./Timeline.astro";
+
+const history = [
+  {
+    title: "Schibsted SMB / Mittanbud",
+    subtitle: "front-end developer",
+    href: "https://mittanbud.no",
+    description:
+      "My entry programming job. Was resposible for public facing nextjs project and a design system project. Was responsible for pre-release of our Finnish version Remppatori. \n Transitioned into converting legacy project to a modern react tech stack and react-native",
+    logo: "/png/schibstedsmb-logo.png",
+    color: "#f5efe9",
+    prevColor: "#0f4d14",
+    date: "2020-2XXX",
+  },
+  {
+    title: "Vinnueftirlitið",
+    subtitle: "Bachelor project - App developer",
+    href: "https://vinnueftirlitid.is/en",
+    description:
+      "Worked with a 4-person team designing and developing the app. Worked with two programmers within the company designing the web API.",
+    logo: "/svg/vinnu-logo.svg",
+    color: "#0f4d14",
+    prevColor: "#142247",
+    date: "2019-2019",
+  },
+  {
+    title: "Tæknivorur ehf",
+    subtitle: "Electronics technician",
+    href: "https://tvr.is/",
+    description: "Summer job where I was fixing samsung phones. Official repair shop for samsung.",
+    logo: "/png/tvr-logo.png",
+    color: "#142247",
+    prevColor: "white",
+    date: "2017-2018",
+  },
+  {
+    title: "Friðrik A. Jónsson",
+    subtitle: "Electronics technician Apprenticeship",
+    href: "http://example.com",
+    description: "Fixed electronic ship equipments",
+    logo: "/png/faj-logo.png",
+    color: "white",
+    prevColor: "#3B3E4A",
+    date: "2015-2016",
+  },
+];
+---
+
+<h2>Work Timeline</h2>
+<ul class="work-history-container">
+  {history.map((item) => <Timeline {...item} />)}
+</ul>
+
+<style>
+  .work-history-container {
+    /* width: 50%; */
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+</style>

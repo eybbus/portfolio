@@ -1,0 +1,41 @@
+---
+import Timeline from "./Timeline.astro";
+
+const history = [
+  {
+    title: "Reykjavik University",
+    subtitle: "Bachelor in computer science",
+    href: "https://mittanbud.no",
+    description: "Web development focus and hint of game development",
+    logo: "/png/HR_logo.png",
+    color: "white",
+    prevColor: "#142247",
+    date: "2016-2019",
+  },
+  {
+    title: "VerkmenntaSkolinn á akureyri",
+    subtitle:
+      "journeyman Electrical Technician & Icelandic matriculation examination with Technical studies",
+    href: "https://tvr.is/",
+    description: "",
+    logo: "/png/vma-logo.png",
+    color: "#142247",
+    prevColor: "#3B3E4A",
+    date: "2011-2015",
+  },
+];
+---
+
+<h2>Edcucation Timeline</h2>
+<ul class="work-history-container">
+  {history.map((item) => <Timeline {...item} />)}
+</ul>
+
+<style>
+  .work-history-container {
+    /* width: 50%; */
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+</style>

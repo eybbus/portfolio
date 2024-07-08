@@ -1,0 +1,110 @@
+---
+import "@fontsource/ibm-plex-mono";
+
+export interface Props {
+  title: string;
+  hideHeader?: boolean;
+}
+
+const { title, hideHeader = false } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/png/me.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    {
+      hideHeader ? null : (
+        <header>
+          <nav>
+            <a href="/">Eybbus.me</a>
+            <a href="/about">Who?</a>
+          </nav>
+        </header>
+      )
+    }
+    <slot />
+    <footer>
+      <hr />
+      Eeeeee!
+    </footer>
+  </body>
+</html>
+<style is:global>
+  :root {
+    --navy-blue: #3b3e4a;
+    --orange: #d84531;
+    --white: #fbfffe;
+    --green: #06a77d;
+    --yellow: #ffca66;
+    --light-yellow: #ffecc8;
+    --blue: #758bfd;
+    --accent: 124, 58, 237;
+    --accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
+    --max-content-size: 70rem;
+    /* background: hsla(7, 68%, 44%, 1); */
+    /* background: linear-gradient(315deg, hsla(7, 68%, 44%, 1) 0%, hsla(228, 11%, 26%, 1) 100%); */
+  }
+  html {
+    font-family: "IBM Plex Mono", monospace;
+    background-color: var(--navy-blue);
+    /* background: linear-gradient(315deg, hsla(7, 68%, 44%, 1) 0%, hsla(228, 11%, 26%, 1) 100%); */
+    color: var(--white);
+    height: 100%;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+    margin: 0;
+  }
+  code {
+    font-family:
+      Menlo,
+      Monaco,
+      Lucida Console,
+      Liberation Mono,
+      DejaVu Sans Mono,
+      Bitstream Vera Sans Mono,
+      Courier New,
+      monospace;
+  }
+  header {
+    display: flex;
+    margin-top: 1.25rem;
+    justify-content: space-between;
+    max-width: var(--max-content-size);
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    color: var(--yellow);
+    padding: 1.25rem 1rem;
+  }
+  header * a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 200ms ease-in-out;
+  }
+  header * a:hover {
+    color: darkorange;
+    text-shadow: darkcyan 0 0 4px;
+  }
+
+  nav {
+    display: flex;
+    gap: 1rem;
+  }
+</style>

@@ -1,0 +1,100 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+
+const webTechnologies = ["nextjs", "react", "styled-components", "SCSS", "tailwind", "storybook"];
+
+const mobileTechnologies = ["React-native", "expo", "nativewind v4"];
+
+const otherTechnologies = ["astro.js", "flask"];
+---
+
+<Layout title="Velkominn til Eybbus">
+  <main>
+    <h1>
+      Góðan daginn! <br /> Velkominn til <span class="text-gradient">Eybbus.me</span>
+    </h1>
+    <span class="cycle"></span>
+    <div class="business-card">
+      <p>Front-end developer with work experience in</p>
+      <div style="display: flex">
+        <ul>
+          {webTechnologies.map((tech) => <li>{tech}</li>)}
+        </ul>
+        <ul>
+          {mobileTechnologies.map((tech) => <li>{tech}</li>)}
+        </ul>
+        <ul>
+          {otherTechnologies.map((tech) => <li>{tech}</li>)}
+        </ul>
+      </div>
+    </div>
+
+    <style>
+      p {
+        margin: 0;
+      }
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        margin-right: 1rem;
+      }
+
+      main {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        margin: auto;
+        padding: 1.5rem;
+        max-width: var(--max-content-size);
+        color: var(--yellow);
+      }
+      h1 {
+        font-size: 3rem;
+        font-weight: 800;
+        margin: 0;
+      }
+      .business-card {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin: 2rem auto;
+        max-width: 50rem;
+        border: 1px solid var(--yellow);
+        border-radius: 0.5rem;
+        padding: 1rem;
+        color: var(--white);
+      }
+      .text-gradient {
+        background-image: var(--accent-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size: 400%;
+        background-position: 0%;
+      }
+
+      @keyframes cycle {
+        0% {
+          content: "👋 Welcome to";
+        }
+        49% {
+          content: "👋 Velkominn til";
+        }
+        99% {
+          content: "👋 Velkommen til";
+        }
+        100% {
+          content: "👋 Welcome to";
+        }
+      }
+
+      .cycle:after {
+          animation: cycle 3s infinite;
+          content: "";
+        }
+      }
+    </style>
+  </main>
+</Layout>

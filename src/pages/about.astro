@@ -1,0 +1,107 @@
+---
+import Layout from "../layouts/Layout.astro";
+import WorkHistory from "../components/WorkHistory.astro";
+import Edcucationhistory from "../components/Edcucationhistory.astro";
+---
+
+<Layout title="About me">
+  <main>
+    <section class="text-container">
+      <h1>Itty bitty me</h1>
+      <hr />
+      <h2>Personal</h2>
+      <p>
+        I have always had a keen interest in technology which is one of the reasons why I went into
+        Electrical Technician studies and then continued onto Programming. Love gaming and learning
+        about the industry. <br />
+        <br /> I have hit my god damn thirties like a bus and staying in norway with my partner.
+        <br />
+        Half Icelandic (born and raised) and half Norwegian (lived since 2020).
+      </p>
+
+      <h2>Professional</h2>
+      <p>
+        I was initally an Elecetrical Technician but then discovered my passion for programming. I
+        have a bacholor degree in computer sience from University of Reykjavik with a focus on web
+        development and sub focus on game development. <br /><br /> Since 2020 I have been working as
+        a front-end developer at Schibsted SMP (previously know as SMB) on a service named
+        <a href="https://mittanbud.no/"> Mittanbud</a> a.k.a
+        <a href="https://match.3byggetilbud.dk/">Match.3byggetilbud</a> a.k.a
+        <a href="https://remppatori.fi">Remppatori</a> a.k.a
+        <a href="https://www.servicefinder.se/">Servicefinder </a>
+      </p>
+      <img class="ultrawide-easter-egg" src="png/me.jpg" />
+    </section>
+    <section class="history-container">
+      <WorkHistory />
+      <hr />
+      <Edcucationhistory />
+    </section>
+  </main>
+</Layout>
+<style>
+  main {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* media for ultrawide */
+    @media (min-width: 2560px) {
+      gap: 5em;
+      grid-template-columns: 1fr 1fr;
+      max-width: calc(var(--max-content-size) + 100em);
+    }
+    margin: auto;
+    max-width: var(--max-content-size);
+    color: var(--white);
+  }
+  .text-container {
+  }
+
+  .ultrawide-easter-egg {
+    display: none;
+    @media (min-width: 2560px) {
+      display: block;
+      margin-top: 2em;
+      width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  .align-bottom {
+    align-self: end;
+  }
+  .history-container {
+    /* display: flex; */
+    /* justify-content: space-between; */
+  }
+
+  h1 {
+    font-weight: 700;
+    color: var(--yellow);
+  }
+  h2 {
+    font-weight: 600;
+    color: var(--yellow);
+  }
+  h3 {
+    font-weight: 500;
+    color: var(--yellow);
+  }
+
+  a {
+    color: var(--yellow);
+    text-decoration: none;
+    background-image: linear-gradient(90deg, var(--navy-blue), var(--yellow), var(--navy-blue));
+    background-size: 100% 0px;
+    background-repeat: no-repeat;
+    background-position: left 1.5em;
+    padding-block: 0.25em;
+    transition:
+      background-size 0.3s,
+      color 0.3s;
+    &:hover {
+      background-size: 100% 3px;
+      color: var(--light-yellow);
+    }
+  }
+</style>
