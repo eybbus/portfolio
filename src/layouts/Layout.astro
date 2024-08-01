@@ -53,7 +53,12 @@ const { title, hideHeader = false } = Astro.props;
     --light-yellow: #ffecc8;
     --blue: #758bfd;
     --accent: 124, 58, 237;
-    --accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
+    --accent-gradient: linear-gradient(
+      45deg,
+      rgb(var(--accent)),
+      #da62c4 30%,
+      white 60%
+    );
     --max-content-size: 70rem;
     /* background: hsla(7, 68%, 44%, 1); */
     /* background: linear-gradient(315deg, hsla(7, 68%, 44%, 1) 0%, hsla(228, 11%, 26%, 1) 100%); */
@@ -70,6 +75,26 @@ const { title, hideHeader = false } = Astro.props;
     flex-direction: column;
     min-height: 100dvh;
     margin: 0;
+  }
+
+  html {
+    box-sizing: border-box;
+  }
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+
+  main {
+    padding: 1.25rem 1rem;
+  }
+  footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.25rem 1rem;
+    color: var(--yellow);
   }
   code {
     font-family:
