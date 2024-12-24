@@ -12,9 +12,9 @@ const otherTechnologies = ["astro.js", "flask"];
 <Layout title="Velkominn til Eybbus">
   <main>
     <h1>
-      Góðan daginn! <br /> Velkominn til <span class="text-gradient">Eybbus.me</span>
+      Góðan daginn! <br /> <span class="cycle"></span> <span class="text-gradient">Eybbus.me</span>
     </h1>
-    <span class="cycle"></span>
+    <!-- <span class="cycle"></span> -->
     <div class="business-card">
       <p>Front-end developer with work experience in</p>
       <div style="display: flex">
@@ -77,7 +77,7 @@ const otherTechnologies = ["astro.js", "flask"];
 
       @keyframes cycle {
         0% {
-          content: "👋 Welcome to";
+          /* content: "👋 Welcome to    "; */
         }
         49% {
           content: "👋 Velkominn til";
@@ -85,14 +85,14 @@ const otherTechnologies = ["astro.js", "flask"];
         99% {
           content: "👋 Velkommen til";
         }
-        100% {
+        /* 100% {
           content: "👋 Welcome to";
-        }
+        } */
       }
 
       .cycle:after {
           animation: cycle 3s infinite;
-          content: "";
+          content: "👋 Velkominn til";
         }
       }
     </style>
